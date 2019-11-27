@@ -1,74 +1,54 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class PolynomTest {
+public class PolynomTest {
 
     @Test
-    void sort() {
+    public void f() {
     }
 
     @Test
-    void organize() {
+    public void add() {
     }
 
     @Test
-    void f() {
+    public void testAdd() {
     }
 
     @Test
-    void add() {
+    public void substract() {
     }
 
     @Test
-    void testAdd() {
+    public void multiply() {
     }
 
     @Test
-    void substract() {
+    public void testMultiply() {
     }
 
     @Test
-    void multiply() {
+    public void testEquals() {
     }
 
     @Test
-    void testMultiply() {
+    public void isZero() {
     }
 
     @Test
-    void testEquals() {
+    public void root() {
     }
 
     @Test
-    void isZero() {
+    public void copy() {
     }
 
     @Test
-    void root() {
+    public void derivative() {
     }
 
     @Test
-    void copy() {
-    }
-
-    @Test
-    void derivative() {
-    }
-
-    @Test
-    void area() {
-    }
-
-    @Test
-    void iteretor() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
-    void initFromString() {
+    public void area() {
     }
 }
