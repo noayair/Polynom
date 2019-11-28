@@ -115,9 +115,9 @@ public class Polynom implements Polynom_able{
 		if (this.equals(p1)) {
 			this.theList = list;
 		}
-		p1.multiply(minus);
-		this.add(p1);
-		p1.multiply(minus);
+		Polynom_able p = p1.copy();
+		p.multiply(minus);
+		this.add(p);
 		this.organize();
 		this.sort();
 	}
@@ -152,7 +152,9 @@ public class Polynom implements Polynom_able{
 	}
 
 	//@Override
-	public boolean equals(Polynom_able p1) {
+	public boolean equals(Object o) {
+		if (!(o instanceof Polynom_able)) return  false;
+		Polynom p1 = (Polynom) o;
 		Iterator<Monom> runner = this.theList.iterator();
 		Iterator<Monom> runnerp1 = p1.iteretor();
 		while(runner.hasNext() && runnerp1.hasNext()) {
@@ -269,4 +271,28 @@ public class Polynom implements Polynom_able{
 	public function initFromString(String s) {
 		return null;
 	}
+
+//	public void substract(Polynom_able p1) {				//substract polynom from polynom
+//		Iterator<Monom> it = p1.iteretor();					//create a pointer to the monoms
+//		Monom minus = new Monom ("-1");
+//		while(it.hasNext()) {
+//			Monom m = it.next();
+//			for(int i = 0; i < theList.size(); i++) {
+//				if(theList.get(i).get_power() == m.get_power()) {	//if the power is equal
+//					m.multipy(minus);
+//					theList.get(i).add(m);	//substruct the coefficients of the monoms
+//					m.multipy(minus);
+//					break;
+//				}
+//				else if(i == theList.size() - 1) {			//if it doesnt have an equal power at the polynom
+//					m.multipy(minus);
+//					theList.add(m);
+//					m.multipy(minus);		//set it as a minus number
+//					break;
+//				}
+//			}
+//		}
+//		this.organize();
+//		this.sort();		//sort the list
+//	}
 }
