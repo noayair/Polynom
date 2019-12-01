@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * 2. Finding a numerical value between two values (currently support root only f(x)=0).
  * 3. Derivative
  * 
- * @author Boaz
+ * @author Noa Yair and Oriya Kronfeld
  *
  */
 public class Polynom implements Polynom_able{
@@ -18,16 +18,15 @@ public class Polynom implements Polynom_able{
 	LinkedList<Monom> theList;
 
 	/**
-	 * Zero (empty polynom)
+	 * empty constructor
 	 */
 	public Polynom() {
 		LinkedList<Monom> temp = new LinkedList<Monom>();
 		theList = temp;
 	}
 	/**
-	 * init a Polynom from a String such as:
-	 *  {"x", "3+1.4X^3-34x", "(2x^2-4)*(-1.2x-7.1)", "(3-3.4x+1)*((3.1x-1.2)-(3X^2-3.1))"};
-	 * @param s: is a string represents a Polynom
+	 * polynom consreuctor that get polynom in type string and convert it to a list of monoms
+	 * @param s - string that we convert to polynom
 	 */
 	public Polynom(String s) {
 		int j = 0;
@@ -51,13 +50,17 @@ public class Polynom implements Polynom_able{
 		this.organize();
 		this.sort();
 	}
-
+	/**
+	 *  function that sorts the polynom in the correct order
+	 */
 	public void sort() { //sort the polynom
 		Comparator<Monom> sort = new Monom_Comperator();
 		this.theList.sort(sort);
 
 	}
-
+	/**
+	 * function that connects monoms with the same power if necessary
+	 */
 	public void organize() {
 		for (int i = 0; i < theList.size(); i++) {
 			for (int j = i+1; j < theList.size();) {
@@ -74,8 +77,10 @@ public class Polynom implements Polynom_able{
 			}
 		}
 	}
-
-
+	/**
+	 *  function that calculate the function value at x
+	 * @return the function value  at x
+	 */
 	@Override
 	public double f(double x) {
 		double j = 0;
@@ -86,16 +91,19 @@ public class Polynom implements Polynom_able{
 		}
 		return j;
 	}
-
-
+	/**
+	 * addition between polynom and monom
+	 * @param m1 - the monom we add to the original polynom
+	 */
 	public void add(Monom m1) { //add monom to polynom
 		this.theList.add(m1);
 		this.organize();
 		this.sort();
 	}
-
-
-
+	/**
+	 * addition between two polynoms
+	 * @param p1 - the polynom we add to the original polynom
+	 */
 	@Override
 	public void add(Polynom_able p1) { //add polynom to polynom
 		Iterator<Monom> runner = p1.iteretor();
@@ -106,6 +114,10 @@ public class Polynom implements Polynom_able{
 		this.organize();
 		this.sort();
 	}
+	/**
+	 * substract polynom from polynom
+	 * @param p1 - the polynom we substract from the original polynom
+	 */
 
 	public void substract(Polynom_able p1) {
 		Monom minus = new Monom ("-1");
@@ -118,7 +130,10 @@ public class Polynom implements Polynom_able{
 		Polynom_able p = p1.copy();
 		p.multiply(minus);
 		this.add(p);
+<<<<<<< HEAD
 		//p1.multiply(minus);
+=======
+>>>>>>> 394d8e4d2355dcaa76ccfb8c1b8bb6374cd81a33
 		this.organize();
 		this.sort();
 	}
@@ -132,7 +147,10 @@ public class Polynom implements Polynom_able{
 		this.organize();
 		this.sort();
 	}
-
+	/**
+	 * multiply polynom with polynom
+	 * @param p1 - the polynom we multiply with the original polynom
+	 */
 	@Override
 	public void multiply(Polynom_able p1) { //polynom*polynom
 		LinkedList<Monom> list = new LinkedList<Monom>(); //new list
@@ -151,10 +169,21 @@ public class Polynom implements Polynom_able{
 		this.organize();
 		this.sort();
 	}
+<<<<<<< HEAD
 
 	//@Override
 	public boolean equals(Object o) {
 		if(!(o instanceof Polynom_able)) return false;
+=======
+	/**
+	 * check if the excepted polynom is equal to the original polynom
+	 * @param o - the object(polynom) we check if is equal to the original polynom
+	 * @return true for equal, false for not equal
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Polynom_able)) return  false;
+>>>>>>> 394d8e4d2355dcaa76ccfb8c1b8bb6374cd81a33
 		Polynom p1 = (Polynom) o;
 		Iterator<Monom> runner = this.theList.iterator();
 		Iterator<Monom> runnerp1 = p1.iteretor();
@@ -165,7 +194,10 @@ public class Polynom implements Polynom_able{
 		}
 		return true;
 	}
-
+	/**
+	 * check if the polynom is zero
+	 * @return true for zero, false for not zero
+	 */
 	@Override
 	public boolean isZero() {
 		Iterator<Monom> runner = this.theList.iterator();
@@ -175,6 +207,13 @@ public class Polynom implements Polynom_able{
 		}
 		return true;
 	}
+	/**
+	 * operate the bisection method on the polynom
+	 * @param x0 - the x under the x-axis
+	 * @param x1 - the x above the x-axis
+	 * @param eps - the epsilon step value
+	 * @return the root of the function
+	 */
 
 	@Override
 	public double root(double x0, double x1, double eps) {
@@ -198,7 +237,10 @@ public class Polynom implements Polynom_able{
 		}
 		return mid;
 	}
-
+	/**
+	 * create a new polynom that identical to the original polynom
+	 * @return the new polynom
+	 */
 	@Override
 	public Polynom_able copy() { //copy
 		Polynom new1 = new Polynom();
@@ -208,7 +250,10 @@ public class Polynom implements Polynom_able{
 		return new1;
 
 	}
-
+	/**
+	 * the derivative of the polynom
+	 * @return the derivative of the polynom
+	 */
 	@Override
 	public Polynom_able derivative() {
 		Polynom new1 = new Polynom();
@@ -227,7 +272,13 @@ public class Polynom implements Polynom_able{
 		new1.sort();
 		return new1;
 	}
-
+	/**
+	 *  Compute Riemann's Integral over this Polynom starting from x0, till x1 using eps size steps
+	 *  @param x0 - the start point of the range
+	 *  @param x1 - the end point of the range
+	 *  @param eps - the epsilon step value
+	 *  @return the approximated area above the x-axis below this Polynom and between the [x0,x1] range
+	 */
 	@Override
 	public double area(double x0, double x1, double eps) {
 		if ( x0 > x1) {
@@ -243,6 +294,10 @@ public class Polynom implements Polynom_able{
 		}
 		return ans;
 	}
+	/**
+	 * creates a pointer to the polynom's monoms
+	 * @return an Iterator (of Monoms) over this Polynom
+	 */
 
 	@Override
 	public Iterator<Monom> iteretor() {
@@ -250,16 +305,21 @@ public class Polynom implements Polynom_able{
 		return runner;
 	}
 	@Override
-
-
+	/**
+	 * prints the polynom as a string
+	 */
 	public String toString() {
 		Iterator<Monom> runner = this.theList.iterator();
 		String ans = "";
 		while(runner.hasNext()) {
 			Monom temp = runner.next();
 			if (temp.get_coefficient() > 0) {
-				ans += "+";
-				ans += temp.toString();
+				if(ans == ""){
+					ans = temp.toString();
+				}else {
+					ans += "+";
+					ans += temp.toString();
+				}
 			}else {
 				ans += temp.toString();
 			}
