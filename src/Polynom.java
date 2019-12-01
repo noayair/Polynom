@@ -115,9 +115,10 @@ public class Polynom implements Polynom_able{
 		if (this.equals(p1)) {
 			this.theList = list;
 		}
-		p1.multiply(minus);
-		this.add(p1);
-		p1.multiply(minus);
+		Polynom_able p = p1.copy();
+		p.multiply(minus);
+		this.add(p);
+		//p1.multiply(minus);
 		this.organize();
 		this.sort();
 	}
@@ -152,7 +153,9 @@ public class Polynom implements Polynom_able{
 	}
 
 	//@Override
-	public boolean equals(Polynom_able p1) {
+	public boolean equals(Object o) {
+		if(!(o instanceof Polynom_able)) return false;
+		Polynom p1 = (Polynom) o;
 		Iterator<Monom> runner = this.theList.iterator();
 		Iterator<Monom> runnerp1 = p1.iteretor();
 		while(runner.hasNext() && runnerp1.hasNext()) {

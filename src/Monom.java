@@ -95,7 +95,10 @@ public class Monom implements function{
 		return null;
 	}
 
-	public boolean equals(Monom m) {
+	public boolean equals(Object o)
+	{
+		if(!(o instanceof Monom)) return false;
+		Monom m = (Monom) o;
 		if (m.get_power() != this.get_power()) return false;
 		if (m.get_coefficient() == 0 && this.get_coefficient() == 0) return true;
 		if ((Math.abs(this.get_coefficient() - m.get_coefficient())) > Monom.EPSILON) return false;
@@ -107,7 +110,7 @@ public class Monom implements function{
 		m._coefficient = this._coefficient;
 		m._power = this._power;
 
-		return null;
+		return m;
 	}
 
 	//****************** Private Methods and Data *****************
