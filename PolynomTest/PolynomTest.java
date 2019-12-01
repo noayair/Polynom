@@ -27,8 +27,8 @@ public class PolynomTest {
         p1.add(m1);
         p2.add(m2);
         p3.add(m3);
-        assertEquals("+8.0x^0+1.0x^1" , p1.toString());
-        assertEquals("+3.5x^0+2.5x^1" , p2.toString());
+        assertEquals("8.0x^0+1.0x^1" , p1.toString());
+        assertEquals("3.5x^0+2.5x^1" , p2.toString());
         assertEquals("-1.0x^1+5.0x^2-3.8x^3-1.0x^4" , p3.toString());
     }
 
@@ -41,9 +41,9 @@ public class PolynomTest {
         p1.add(p2);
         p2.add(p3);
         p4.add(p1);
-        assertEquals("+3.5x^0-6.0x^1" , p1.toString());
-        assertEquals("+3.5x^0-8.0x^1+5.0x^2-3.8x^3" , p2.toString());
-        assertEquals("+12.5x^0-6.0x^1" , p4.toString());
+        assertEquals("3.5x^0-6.0x^1" , p1.toString());
+        assertEquals("3.5x^0-8.0x^1+5.0x^2-3.8x^3" , p2.toString());
+        assertEquals("12.5x^0-6.0x^1" , p4.toString());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class PolynomTest {
         p2.substract(p3);
         p3.substract(p4);
         assertEquals("-3.5x^0+8.0x^1" , p1.toString());
-        assertEquals("+3.5x^0-6.0x^1-5.0x^2+3.8x^3" , p2.toString());
+        assertEquals("3.5x^0-6.0x^1-5.0x^2+3.8x^3" , p2.toString());
         assertEquals("-9.0x^0-1.0x^1+5.0x^2-3.8x^3" , p3.toString());
     }
 
@@ -71,9 +71,9 @@ public class PolynomTest {
         p1.multiply(m1);
         p2.multiply(m2);
         p3.multiply(m3);
-        assertEquals("+8.0x^1" , p1.toString());
-        assertEquals("+33.25x^1-66.5x^2" , p2.toString());
-        assertEquals("+1.0x^5-5.0x^6+3.8x^7" , p3.toString());
+        assertEquals("8.0x^1" , p1.toString());
+        assertEquals("33.25x^1-66.5x^2" , p2.toString());
+        assertEquals("1.0x^5-5.0x^6+3.8x^7" , p3.toString());
     }
 
     @Test
@@ -84,7 +84,7 @@ public class PolynomTest {
         Polynom p4 = new Polynom("9");
         p1.multiply(p2);
         p3.multiply(p4);
-        assertEquals("+3.5x^1-7.0x^2" , p1.toString());
+        assertEquals("3.5x^1-7.0x^2" , p1.toString());
         assertEquals("-9.0x^1+45.0x^2-34.199999999999996x^3" , p3.toString());
     }
 
