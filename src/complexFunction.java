@@ -16,8 +16,6 @@ public class complexFunction {
         return null;
     }
 
-    public  String
-
     public String chekEnum(){
         switch(this.op){
             case Plus:
@@ -57,7 +55,7 @@ public class complexFunction {
 
     public void plus(function f1){
         complexFunction c = new complexFunction(this.left , this.right , this.op);
-        complexFunction c1 = new complexFunction(c , f1 , Operation.Plus);
+     //   complexFunction c1 = new complexFunction(c , f1 , Operation.Plus);
     }
 
     public void mul(function f1){
