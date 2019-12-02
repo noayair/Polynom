@@ -128,7 +128,9 @@ public class Monom implements function{
 
 	@Override
 	public function initFromString(String s) {
-		return null;
+		Monom m = new Monom(s);
+		function m1 = (function) m;
+		return m1;
 	}
 
 	/**
