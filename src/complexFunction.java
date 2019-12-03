@@ -257,7 +257,7 @@ public class complexFunction implements function {
 //            i = s.indexOf(')');
 //            s3 = s.substring(0, i);
 //            Polynom f2 = new Polynom(s3);
-//       r     if(this.root.getRight().getF() != null){
+//            if(this.root.getRight().getF() != null){
 //                this.root = this.root.getParent();
 //                this.root.getRight().setF(f2);
 //            }else {

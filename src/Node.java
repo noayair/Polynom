@@ -1,28 +1,4 @@
 public class Node {
-<<<<<<< HEAD
-   private Node left;
-   private Node right;
-   private function f;
-   private Operation op;
-
-   Node (function f, Operation op, Node left, Node right){
-       this.f = f;
-       this.op = op;
-       this.left= left;
-       this.right= right;
-   }
-   public function getF(){
-       return f;
-   }
-   public Node getLeft(){
-       return left;
-   }
-    public Node getRight() {
-        return right;
-    }
-    public Operation getOp(){
-       return op;
-=======
     private function f;
     private Operation op;
     private Node left;
@@ -55,7 +31,6 @@ public class Node {
 
     public Node getParent(){
         return parent;
->>>>>>> 0cdb885ac6387054fb3437ad99ae576f030f500f
     }
 
     public void setF(function f) {
@@ -74,12 +49,7 @@ public class Node {
         this.op = op;
     }
 
-<<<<<<< HEAD
-}
-
-=======
     public void setParent(Node parent) {
         this.parent = parent;
     }
 }
->>>>>>> 0cdb885ac6387054fb3437ad99ae576f030f500f
