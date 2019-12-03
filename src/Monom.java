@@ -133,18 +133,12 @@ public class Monom implements function{
 		return m1;
 	}
 
-<<<<<<< HEAD
-	public boolean equals(Object o)
-	{
-		if(!(o instanceof Monom)) return false;
-=======
 	/**
 	 * check if the object o(monom) and the original monom are equal
 	 *
 	 */
 	public boolean equals(Object o) {
 		if (!(o instanceof Monom)) return  false;
->>>>>>> 394d8e4d2355dcaa76ccfb8c1b8bb6374cd81a33
 		Monom m = (Monom) o;
 		if (m.get_power() != this.get_power()) return false;
 		if (m.get_coefficient() == 0 && this.get_coefficient() == 0) return true;
@@ -160,10 +154,6 @@ public class Monom implements function{
 		Monom m = new Monom(0,0);
 		m._coefficient = this._coefficient;
 		m._power = this._power;
-<<<<<<< HEAD
-
-=======
->>>>>>> 394d8e4d2355dcaa76ccfb8c1b8bb6374cd81a33
 		return m;
 	}
 	/**
