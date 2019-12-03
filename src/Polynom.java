@@ -9,7 +9,7 @@ import java.util.LinkedList;
  * 1. Riemann's Integral: https://en.wikipedia.org/wiki/Riemann_integral
  * 2. Finding a numerical value between two values (currently support root only f(x)=0).
  * 3. Derivative
- * 
+ *
  * @author Noa Yair and Oriya Kronfeld
  *
  */
@@ -71,7 +71,7 @@ public class Polynom implements Polynom_able{
 				}else {
 					j++;
 				}
-			} 
+			}
 			if (theList.get(i).get_coefficient() == 0 && !this.isZero()) {
 				theList.remove(i);
 			}
@@ -135,7 +135,7 @@ public class Polynom implements Polynom_able{
 	}
 
 	public void multiply(Monom m1) { //polynom*monom
-		Iterator<Monom> runner = this.theList.iterator();	
+		Iterator<Monom> runner = this.theList.iterator();
 		while(runner.hasNext()) {
 			Monom temp = runner.next();
 			temp.multipy(m1);
@@ -159,7 +159,7 @@ public class Polynom implements Polynom_able{
 				Monom temp = runnerCopy.next();
 				temp.multipy(temp1); //
 				list.add(temp);
-			} 
+			}
 		}
 		this.theList = list;
 		this.organize();
