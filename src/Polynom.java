@@ -9,7 +9,7 @@ import java.util.LinkedList;
  * 1. Riemann's Integral: https://en.wikipedia.org/wiki/Riemann_integral
  * 2. Finding a numerical value between two values (currently support root only f(x)=0).
  * 3. Derivative
- * 
+ *
  * @author Noa Yair and Oriya Kronfeld
  *
  */
@@ -71,7 +71,7 @@ public class Polynom implements Polynom_able{
 				}else {
 					j++;
 				}
-			} 
+			}
 			if (theList.get(i).get_coefficient() == 0 && !this.isZero()) {
 				theList.remove(i);
 			}
@@ -130,16 +130,12 @@ public class Polynom implements Polynom_able{
 		Polynom_able p = p1.copy();
 		p.multiply(minus);
 		this.add(p);
-<<<<<<< HEAD
-		//p1.multiply(minus);
-=======
->>>>>>> 394d8e4d2355dcaa76ccfb8c1b8bb6374cd81a33
 		this.organize();
 		this.sort();
 	}
 
 	public void multiply(Monom m1) { //polynom*monom
-		Iterator<Monom> runner = this.theList.iterator();	
+		Iterator<Monom> runner = this.theList.iterator();
 		while(runner.hasNext()) {
 			Monom temp = runner.next();
 			temp.multipy(m1);
@@ -163,18 +159,12 @@ public class Polynom implements Polynom_able{
 				Monom temp = runnerCopy.next();
 				temp.multipy(temp1); //
 				list.add(temp);
-			} 
+			}
 		}
 		this.theList = list;
 		this.organize();
 		this.sort();
 	}
-<<<<<<< HEAD
-
-	//@Override
-	public boolean equals(Object o) {
-		if(!(o instanceof Polynom_able)) return false;
-=======
 	/**
 	 * check if the excepted polynom is equal to the original polynom
 	 * @param o - the object(polynom) we check if is equal to the original polynom
@@ -183,7 +173,6 @@ public class Polynom implements Polynom_able{
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Polynom_able)) return  false;
->>>>>>> 394d8e4d2355dcaa76ccfb8c1b8bb6374cd81a33
 		Polynom p1 = (Polynom) o;
 		Iterator<Monom> runner = this.theList.iterator();
 		Iterator<Monom> runnerp1 = p1.iteretor();
@@ -330,6 +319,8 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public function initFromString(String s) {
-		return null;
+		Polynom p = new Polynom(s);
+		function p1 = (function) p;
+		return p1;
 	}
 }
