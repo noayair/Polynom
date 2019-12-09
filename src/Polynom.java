@@ -56,7 +56,6 @@ public class Polynom implements Polynom_able{
 	public void sort() { //sort the polynom
 		Comparator<Monom> sort = new Monom_Comperator();
 		this.theList.sort(sort);
-
 	}
 	/**
 	 * function that connects monoms with the same power if necessary
@@ -303,17 +302,16 @@ public class Polynom implements Polynom_able{
 		while(runner.hasNext()) {
 			Monom temp = runner.next();
 			if (temp.get_coefficient() > 0) {
-				if(ans == ""){
+				if (ans == "") {
 					ans = temp.toString();
-				}else {
+				} else {
 					ans += "+";
 					ans += temp.toString();
 				}
-			}else {
+			} else {
 				ans += temp.toString();
 			}
 		}
-		System.out.println(ans);
 		return ans;
 	}
 
